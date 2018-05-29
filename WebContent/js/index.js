@@ -275,6 +275,9 @@ $(function () {
     $(".sliderSmImg").css("top", randomTop);
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
         $(".sliderHand").on("touchstart", function (e) {
+            if (!verifySliderSuccess) {
+                $(".sliderBigImg").removeClass("dn");
+            }
             var $this = $(this);
             $this.addClass("sliderHandDrag");
             console.log(e);
